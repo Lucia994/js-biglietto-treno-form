@@ -80,3 +80,13 @@ button:hover {
   font-weight: bold;
   text-align: center;
 }
+
+.ticket {
+  background-color: #f1f1f1;
+  color: #000;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

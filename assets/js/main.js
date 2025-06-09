@@ -22,3 +22,27 @@ document.getElementById("ticket-form").addEventListener("submit", function (even
     errorDiv.style.display = "block";
     return;
   }
+    // Calcolo prezzo base
+  const costForKm = 0.21;
+  let totalPriceTicket = userKm * costForKm;
+  console.log(totalPriceTicket);
+
+  // Sconto in base alla fascia
+  if (userAge === "minorenne") {
+    totalPriceTicket = totalPriceTicket - (totalPriceTicket * 0.2);
+    console.log("discount_minors: " + "€" + totalPriceTicket.toFixed(2));
+  }
+  else if (userAge === "over65") {
+    totalPriceTicket = totalPriceTicket - (totalPriceTicket * 0.4);
+    console.log("discount_senior: " + "€" + totalPriceTicket.toFixed(2));
+  }
+  else {
+    console.log("full_price: " + totalPriceTicket + "€");
+  }
+
+
+  // Output visibile
+  output.innerText = `Passeggero: ${userFullName}\nKm: ${userKm}\nFascia età: ${userAge}\nPrezzo biglietto: €${totalPriceTicket.toFixed(2)}`;
+  document.getElementById("ticket-box").style.display = "block";
+});
+
